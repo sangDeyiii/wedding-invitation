@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Thiệp cưới online - Phương Thúy & Quang Phong</title>
+    <meta
+      name="description"
+      content="Trân trọng kính mời bạn đến dự lễ cưới của Phương Thúy và Quang Phong."
+    />
+    <meta property="og:title" content="Thiệp cưới Phương Thúy & Quang Phong" />
+    <meta
+      property="og:description"
+      content="Trân trọng kính mời bạn đến dự lễ cưới của chúng mình."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1200&auto=format&fit=crop"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="desktop-bg"></div>
+
+    <aside class="qr-side">
+      <div class="qr-box">QR</div>
+      <p>Quét mã xem thiệp</p>
+    </aside>
+
+    <div class="floating-actions">
+      <button id="musicToggle" class="circle-btn" aria-label="Bật tắt nhạc">
+        ♪
+      </button>
+      <a href="#rsvp" class="main-action">Xác nhận</a>
+      <a href="#map" class="circle-btn" aria-label="Bản đồ">⌖</a>
+    </div>
+
+    <audio id="bgMusic" loop autoplay preload="auto">
+      <source src="./assets/music/music_for_wedding.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="start-overlay" id="startOverlay" aria-hidden="true">
+      <button class="start-card" id="startExperience" type="button">
+        <span>♪</span>
+        <strong>Mở thiệp và bật nhạc</strong>
+      </button>
+    </div>
+
+    <main class="phone-shell">
+      <section class="hero section-full" id="top">
+        <div class="soft-circle circle-1"></div>
+        <div class="soft-circle circle-2"></div>
+        <p class="overline reveal">Save the date</p>
+        <div class="hero-photo reveal">
+          <img
+            src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1200&auto=format&fit=crop"
+            alt="Ảnh cưới cô dâu chú rể"
+          />
+        </div>
+        <p class="script-title reveal">The Wedding of</p>
+        <h1 class="couple-name reveal">
+          Phương Thúy
+          <span>&</span>
+          Quang Phong
+        </h1>
+        <p class="wedding-date reveal">22.12.2026</p>
+        <a href="#intro" class="scroll-down reveal" aria-label="Xem lời mời">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="section intro" id="intro">
+        <p class="overline reveal">Trân trọng kính mời</p>
+        <h2 class="section-title reveal">Đến dự lễ cưới</h2>
+        <div class="divider reveal"></div>
+        <p class="body-text reveal">
+          Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi trong
+          ngày vui của hai con.
+        </p>
+        <div class="date-card reveal">
+          <p>Vào lúc 17:00</p>
+          <h3>Chủ nhật</h3>
+          <strong>22</strong>
+          <span>Tháng 12, 2026</span>
+        </div>
+      </section>
+
+      <section class="section couple-section accent-bg">
+        <p class="overline reveal">Cô dâu & Chú rể</p>
+        <h2 class="section-title reveal">Nhân vật chính</h2>
+        <div class="couple-grid">
+          <article class="person-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop"
+              alt="Cô dâu"
+            />
+            <h3>Phương Thúy</h3>
+            <p>Con ông Nguyễn Văn A<br />Con bà Trần Thị B</p>
+          </article>
+          <article class="person-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop"
+              alt="Chú rể"
+            />
+            <h3>Quang Phong</h3>
+            <p>Con ông Phạm Văn C<br />Con bà Lê Thị D</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section countdown-section">
+        <p class="overline reveal">Countdown</p>
+        <h2 class="section-title reveal">Đếm ngược ngày cưới</h2>
+        <div class="countdown reveal" id="countdown">
+          <div><strong id="days">00</strong><span>Ngày</span></div>
+          <div><strong id="hours">00</strong><span>Giờ</span></div>
+          <div><strong id="minutes">00</strong><span>Phút</span></div>
+          <div><strong id="seconds">00</strong><span>Giây</span></div>
+        </div>
+      </section>
+
+      <section class="section timeline-section light-bg">
+        <p class="overline reveal">Timeline</p>
+        <h2 class="section-title reveal">Lịch trình</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <time>16:30</time>
+            <div>
+              <h3>Đón khách</h3>
+              <p>Check-in, chụp ảnh và thưởng thức tiệc nhẹ.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <time>17:00</time>
+            <div>
+              <h3>Lễ thành hôn</h3>
+              <p>Khoảnh khắc thiêng liêng của cô dâu chú rể.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <time>18:00</time>
+            <div>
+              <h3>Khai tiệc</h3>
+              <p>Cùng nâng ly chúc mừng và dùng bữa thân mật.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <time>20:00</time>
+            <div>
+              <h3>Gửi lời chúc</h3>
+              <p>Âm nhạc, lời chúc và những kỷ niệm đẹp.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section album-section">
+        <p class="overline reveal">Album</p>
+        <h2 class="section-title reveal">Khoảnh khắc yêu thương</h2>
+        <div class="gallery">
+          <img
+            class="wide reveal"
+            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1200&auto=format&fit=crop"
+            alt="Ảnh cưới 1"
+          />
+          <img
+            class="reveal"
+            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=900&auto=format&fit=crop"
+            alt="Ảnh cưới 2"
+          />
+          <img
+            class="reveal"
+            src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=900&auto=format&fit=crop"
+            alt="Ảnh cưới 3"
+          />
+          <img
+            class="wide reveal"
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop"
+            alt="Ảnh cưới 4"
+          />
+        </div>
+      </section>
+
+      <section class="section map-section accent-bg" id="map">
+        <p class="icon reveal">⌖</p>
+        <p class="overline reveal">Địa điểm</p>
+        <h2 class="section-title reveal">Trung tâm tiệc cưới</h2>
+        <p class="body-text reveal">
+          White Palace, 194 Hoàng Văn Thụ, Phú Nhuận, TP. Hồ Chí Minh
+        </p>
+        <div class="map-box reveal">
+          <iframe
+            title="Wedding map"
+            src="https://www.google.com/maps?q=White%20Palace%20194%20Hoang%20Van%20Thu%20Phu%20Nhuan%20Ho%20Chi%20Minh&output=embed"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <a
+          class="primary-btn reveal"
+          href="https://www.google.com/maps/search/?api=1&query=White+Palace+194+Hoang+Van+Thu+Phu+Nhuan+Ho+Chi+Minh"
+          target="_blank"
+          rel="noopener"
+          >Chỉ đường</a
+        >
+      </section>
+
+      <section class="section gift-section">
+        <p class="icon reveal">♡</p>
+        <p class="overline reveal">Mừng cưới</p>
+        <h2 class="section-title reveal">Gửi quà đến cô dâu chú rể</h2>
+        <div class="gift-card reveal">
+          <div class="fake-qr">QR BANK</div>
+          <h3>Ngân hàng MB Bank</h3>
+          <p>STK: 0123456789</p>
+          <p>Chủ TK: DO THI THUY</p>
+        </div>
+      </section>
+
+      <section class="section rsvp-section light-bg" id="rsvp">
+        <p class="icon reveal">♥</p>
+        <p class="overline reveal">RSVP</p>
+        <h2 class="section-title reveal">Xác nhận tham dự</h2>
+        <form class="rsvp-form reveal" id="rsvpForm">
+          <input type="text" name="name" placeholder="Họ và tên" required />
+          <input type="tel" name="phone" placeholder="Số điện thoại" />
+          <select name="attend">
+            <option>Có, tôi sẽ tham dự</option>
+            <option>Rất tiếc, tôi không tham dự được</option>
+          </select>
+          <select name="guests">
+            <option value="1">1 khách</option>
+            <option value="2">2 khách</option>
+            <option value="3">3 khách</option>
+            <option value="4">4 khách</option>
+          </select>
+          <textarea name="message" placeholder="Lời chúc" rows="4"></textarea>
+          <button type="submit">Gửi xác nhận</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </section>
+
+      <section class="section guestbook-section">
+        <p class="overline reveal">Guestbook</p>
+        <h2 class="section-title reveal">Sổ lưu bút</h2>
+        <div class="wish-list">
+          <article class="wish reveal">
+            <p>
+              “Chúc hai bạn trăm năm hạnh phúc, mãi yêu thương và đồng hành cùng
+              nhau.”
+            </p>
+            <strong>Khách mời 1</strong>
+          </article>
+          <article class="wish reveal">
+            <p>“Một ngày thật đẹp và một hành trình thật viên mãn nhé!”</p>
+            <strong>Khách mời 2</strong>
+          </article>
+          <article class="wish reveal">
+            <p>“Chúc cô dâu chú rể luôn ngọt ngào như ngày hôm nay.”</p>
+            <strong>Khách mời 3</strong>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2>Thank you!</h2>
+        <p>Cảm ơn bạn đã dành thời gian tham dự và chúc phúc cho chúng mình.</p>
+        <h3>Phương Thúy & Quang Phong</h3>
+        <div class="footer-actions">
+          <a href="tel:0900000000">Gọi cô dâu</a>
+          <a href="tel:0900000001">Gọi chú rể</a>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (window.__weddingInvitationStarted) return;
+
+        var fallbackScript = document.createElement('script');
+        fallbackScript.src = './src/main.js';
+        document.body.appendChild(fallbackScript);
+      }, 300);
+    </script>
+  </body>
+</html>
