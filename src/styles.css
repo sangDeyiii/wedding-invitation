@@ -251,12 +251,15 @@ button, input, select, textarea { font: inherit; }
   aspect-ratio: 1.42;
   border-radius: 8px;
   overflow: visible;
+  perspective: 900px;
+  transform-origin: center;
   background:
     radial-gradient(circle at 24% 18%, rgba(255,255,255,.48), transparent 22%),
     linear-gradient(145deg, #fffdf8, #fff5f6 42%, #f2c7cf 100%);
   box-shadow:
     0 28px 70px rgba(124, 85, 76, .24),
     inset 0 1px 0 rgba(255,255,255,.24);
+  transition: transform .82s cubic-bezier(.2,.72,.18,1), opacity .7s ease;
 }
 .envelope-panel::before {
   content: "";
@@ -267,6 +270,7 @@ button, input, select, textarea { font: inherit; }
     repeating-linear-gradient(22deg, rgba(231,143,163,.1) 0 1px, transparent 1px 5px),
     repeating-linear-gradient(112deg, rgba(155,109,95,.12) 0 1px, transparent 1px 6px);
   opacity: .7;
+  transition: transform .82s cubic-bezier(.2,.72,.18,1), opacity .64s ease;
 }
 .envelope-panel::after {
   content: "";
@@ -276,28 +280,53 @@ button, input, select, textarea { font: inherit; }
   border-radius: inherit;
   pointer-events: none;
 }
+.envelope-panel .start-card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 52px;
+  z-index: -2;
+  width: min(76vw, 390px);
+  aspect-ratio: 1.28;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,245,246,.96)),
+    radial-gradient(circle at 20% 18%, rgba(231,143,163,.16), transparent 30%);
+  box-shadow:
+    0 18px 36px rgba(124,85,76,.18),
+    inset 0 0 0 1px rgba(199,95,119,.14);
+  opacity: 0;
+  transform: translate(-50%, 48px) scale(.92);
+  transition: transform .84s cubic-bezier(.2,.72,.18,1), opacity .5s ease;
+}
 .envelope-flap {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  transition: transform .84s cubic-bezier(.2,.72,.18,1), opacity .55s ease, filter .55s ease;
 }
 .envelope-flap-top {
   clip-path: polygon(0 0, 100% 0, 50% 52%);
   background: linear-gradient(180deg, rgba(255,255,255,.58), rgba(231,143,163,.24));
   border-radius: 8px 8px 0 0;
+  transform-origin: top center;
+  z-index: 1;
 }
 .envelope-flap-left {
   clip-path: polygon(0 0, 50% 52%, 0 100%);
   background: linear-gradient(90deg, rgba(199,95,119,.22), rgba(255,255,255,.18));
+  transform-origin: left center;
 }
 .envelope-flap-right {
   clip-path: polygon(100% 0, 50% 52%, 100% 100%);
   background: linear-gradient(270deg, rgba(155,109,95,.2), rgba(255,255,255,.18));
+  transform-origin: right center;
 }
 .envelope-flap-bottom {
   clip-path: polygon(0 100%, 50% 52%, 100% 100%);
   background: linear-gradient(0deg, rgba(231,143,163,.26), rgba(255,255,255,.16));
   border-radius: 0 0 8px 8px;
+  transform-origin: bottom center;
 }
 .start-card {
   position: absolute;
@@ -316,6 +345,7 @@ button, input, select, textarea { font: inherit; }
   justify-content: center;
   gap: 8px;
   transform: translate(-50%, -50%);
+  transition: transform .62s cubic-bezier(.2,.72,.18,1), opacity .48s ease, filter .48s ease;
 }
 .wax-seal {
   position: relative;
@@ -416,6 +446,37 @@ button, input, select, textarea { font: inherit; }
 .start-card:hover .wax-seal {
   filter: saturate(1.08) brightness(1.03);
   transform: translateY(-2px) rotate(-4deg);
+}
+.start-overlay.is-opening .envelope-panel {
+  transform: translateY(22px) scale(.96);
+}
+.start-overlay.is-opening .envelope-panel::before {
+  opacity: .38;
+}
+.start-overlay.is-opening .envelope-panel .start-card::before {
+  opacity: 1;
+  transform: translate(-50%, -118px) scale(1);
+}
+.start-overlay.is-opening .envelope-flap-top {
+  transform: rotateX(68deg) translateY(-8px);
+  filter: brightness(1.03);
+}
+.start-overlay.is-opening .envelope-flap-left {
+  transform: translateX(-18px) rotateY(-14deg);
+  opacity: .82;
+}
+.start-overlay.is-opening .envelope-flap-right {
+  transform: translateX(18px) rotateY(14deg);
+  opacity: .82;
+}
+.start-overlay.is-opening .envelope-flap-bottom {
+  transform: translateY(20px);
+  opacity: .86;
+}
+.start-overlay.is-opening .start-card {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translate(-50%, -50%) scale(.72) rotate(8deg);
 }
 
 .qr-side { position: fixed; right: calc(50% - 360px); top: 50%; transform: translateY(-50%); width: 130px; padding: 14px; border-radius: 18px; background: white; text-align: center; box-shadow: var(--shadow); }

@@ -67,13 +67,17 @@ function showStartOverlay() {
 }
 
 function hideStartOverlay() {
-  startOverlay?.classList.add('opening');
+  startOverlay?.classList.add('is-opening');
+
+  window.setTimeout(() => {
+    startOverlay?.classList.add('opening');
+  }, 720);
 
   window.setTimeout(() => {
     document.body.style.overflow = '';
-    startOverlay?.classList.remove('show', 'opening');
+    startOverlay?.classList.remove('show', 'is-opening', 'opening');
     startOverlay?.setAttribute('aria-hidden', 'true');
-  }, 560);
+  }, 1280);
 }
 
 function startSlowAutoScroll(speed = 58) {
@@ -145,7 +149,7 @@ startExperience?.addEventListener('click', async () => {
 
   window.setTimeout(() => {
     if (window.scrollY < 10) startSlowAutoScroll();
-  }, 760);
+  }, 1380);
 });
 
 async function initMusic() {
