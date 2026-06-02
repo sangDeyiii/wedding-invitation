@@ -222,9 +222,9 @@ button, input, select, textarea { font: inherit; }
   place-items: center;
   padding: clamp(18px, 5vw, 42px);
   background:
-    radial-gradient(circle at 18% 12%, rgba(255,255,255,.18), transparent 26%),
-    radial-gradient(circle at 84% 78%, rgba(83,12,21,.28), transparent 30%),
-    linear-gradient(135deg, #8e1f35, #d73d5c 45%, #8a1a31);
+    radial-gradient(circle at 18% 12%, rgba(231,143,163,.26), transparent 28%),
+    radial-gradient(circle at 84% 78%, rgba(177,201,165,.2), transparent 32%),
+    linear-gradient(135deg, #fffdf8, #fff5f6 48%, #f7f3ed);
   transition: opacity .55s ease, visibility .55s ease;
 }
 .start-overlay::before {
@@ -233,8 +233,8 @@ button, input, select, textarea { font: inherit; }
   inset: 0;
   opacity: .35;
   background-image:
-    repeating-linear-gradient(35deg, rgba(255,255,255,.12) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(118deg, rgba(54,0,14,.18) 0 1px, transparent 1px 7px);
+    repeating-linear-gradient(35deg, rgba(199,95,119,.1) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(118deg, rgba(124,85,76,.12) 0 1px, transparent 1px 7px);
   mix-blend-mode: soft-light;
 }
 .start-overlay.opening {
@@ -252,10 +252,10 @@ button, input, select, textarea { font: inherit; }
   border-radius: 8px;
   overflow: visible;
   background:
-    radial-gradient(circle at 24% 18%, rgba(255,255,255,.16), transparent 20%),
-    linear-gradient(145deg, #c8324d, #9f2039 58%, #72162a);
+    radial-gradient(circle at 24% 18%, rgba(255,255,255,.48), transparent 22%),
+    linear-gradient(145deg, #fffdf8, #fff5f6 42%, #f2c7cf 100%);
   box-shadow:
-    0 28px 70px rgba(34, 12, 20, .42),
+    0 28px 70px rgba(124, 85, 76, .24),
     inset 0 1px 0 rgba(255,255,255,.24);
 }
 .envelope-panel::before {
@@ -264,15 +264,15 @@ button, input, select, textarea { font: inherit; }
   inset: 0;
   border-radius: inherit;
   background-image:
-    repeating-linear-gradient(22deg, rgba(255,255,255,.11) 0 1px, transparent 1px 5px),
-    repeating-linear-gradient(112deg, rgba(58,0,18,.18) 0 1px, transparent 1px 6px);
-  opacity: .55;
+    repeating-linear-gradient(22deg, rgba(231,143,163,.1) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(112deg, rgba(155,109,95,.12) 0 1px, transparent 1px 6px);
+  opacity: .7;
 }
 .envelope-panel::after {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(199,95,119,.16);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -283,20 +283,20 @@ button, input, select, textarea { font: inherit; }
 }
 .envelope-flap-top {
   clip-path: polygon(0 0, 100% 0, 50% 52%);
-  background: linear-gradient(180deg, rgba(255,107,126,.36), rgba(108,13,31,.2));
+  background: linear-gradient(180deg, rgba(255,255,255,.58), rgba(231,143,163,.24));
   border-radius: 8px 8px 0 0;
 }
 .envelope-flap-left {
   clip-path: polygon(0 0, 50% 52%, 0 100%);
-  background: linear-gradient(90deg, rgba(86,9,29,.34), rgba(255,255,255,.06));
+  background: linear-gradient(90deg, rgba(199,95,119,.22), rgba(255,255,255,.18));
 }
 .envelope-flap-right {
   clip-path: polygon(100% 0, 50% 52%, 100% 100%);
-  background: linear-gradient(270deg, rgba(86,9,29,.32), rgba(255,255,255,.05));
+  background: linear-gradient(270deg, rgba(155,109,95,.2), rgba(255,255,255,.18));
 }
 .envelope-flap-bottom {
   clip-path: polygon(0 100%, 50% 52%, 100% 100%);
-  background: linear-gradient(0deg, rgba(58,5,20,.36), rgba(255,255,255,.08));
+  background: linear-gradient(0deg, rgba(231,143,163,.26), rgba(255,255,255,.16));
   border-radius: 0 0 8px 8px;
 }
 .start-card {
@@ -392,7 +392,7 @@ button, input, select, textarea { font: inherit; }
   padding: 7px 13px;
   border-radius: 999px;
   color: white;
-  background: rgba(82,17,29,.62);
+  background: rgba(199,95,119,.82);
   box-shadow: 0 8px 18px rgba(68,37,24,.14);
   font-size: 12px;
   font-weight: 700;
