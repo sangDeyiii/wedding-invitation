@@ -326,13 +326,16 @@ button, input, select, textarea { font: inherit; }
   margin: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 36% 28%, rgba(255,244,186,.92) 0 10%, transparent 28%),
-    radial-gradient(circle at 68% 72%, rgba(116,61,21,.22), transparent 34%),
-    radial-gradient(circle, #e9bd63 0 50%, #bf762d 72%, #8b471d 100%);
+    radial-gradient(circle at 32% 22%, rgba(255,248,202,.95) 0 7%, transparent 22%),
+    radial-gradient(circle at 62% 74%, rgba(88,37,10,.28), transparent 34%),
+    radial-gradient(circle at 28% 68%, rgba(255,230,148,.24), transparent 24%),
+    conic-gradient(from 18deg, #d4933c, #f6d17b 12%, #b46325 24%, #e6af4f 40%, #8d451b 58%, #efc36b 76%, #b86726 100%);
   box-shadow:
-    inset 0 3px 8px rgba(255,255,255,.48),
-    inset 0 -8px 13px rgba(82,37,12,.32),
-    0 14px 26px rgba(68,37,24,.28);
+    inset 4px 5px 10px rgba(255,255,255,.42),
+    inset -7px -10px 14px rgba(76,31,8,.34),
+    inset 0 0 0 1px rgba(255,246,185,.18),
+    0 4px 0 rgba(95,43,15,.35),
+    0 16px 28px rgba(68,37,24,.32);
   isolation: isolate;
   transform: rotate(-7deg);
   transition: transform .22s ease, filter .22s ease;
@@ -340,52 +343,63 @@ button, input, select, textarea { font: inherit; }
 .wax-seal::before {
   content: "";
   position: absolute;
-  inset: -7px;
+  inset: -8px;
   z-index: -1;
   border-radius: 50%;
   background:
     conic-gradient(
-      from 8deg,
-      #b86926,
-      #f1ca71 9%,
-      #bd6d29 18%,
-      #edbf5f 28%,
-      #9b511f 38%,
-      #e3a94a 50%,
-      #a75a23 62%,
-      #f0c96f 76%,
-      #b96a28 88%,
-      #e4b55b
+      from 3deg,
+      #9d4d1d 0 5%,
+      #efbf61 5% 11%,
+      #ba6424 11% 19%,
+      #f0ca72 19% 26%,
+      #9e4f1e 26% 35%,
+      #e0a64b 35% 45%,
+      #7f3817 45% 53%,
+      #f3c96f 53% 61%,
+      #b45e24 61% 70%,
+      #edb85a 70% 78%,
+      #904318 78% 88%,
+      #e4b55b 88% 100%
     );
   clip-path: polygon(
-    50% 0%, 58% 7%, 68% 4%, 75% 12%, 85% 11%, 90% 22%,
-    99% 28%, 94% 40%, 100% 50%, 94% 60%, 99% 72%, 89% 78%,
-    85% 90%, 74% 89%, 67% 97%, 58% 93%, 50% 100%, 42% 93%,
-    32% 97%, 25% 88%, 15% 90%, 10% 78%, 1% 72%, 6% 60%,
-    0% 50%, 6% 40%, 1% 28%, 10% 22%, 15% 11%, 25% 12%,
-    32% 4%, 42% 7%
+    50% 0%, 56% 6%, 65% 3%, 71% 10%, 81% 8%, 86% 18%,
+    96% 24%, 92% 35%, 100% 44%, 95% 53%, 99% 64%, 90% 71%,
+    88% 84%, 77% 84%, 70% 96%, 59% 91%, 50% 100%, 41% 91%,
+    30% 96%, 23% 84%, 12% 85%, 10% 72%, 1% 65%, 5% 54%,
+    0% 44%, 8% 35%, 4% 24%, 14% 18%, 19% 8%, 29% 10%,
+    35% 3%, 44% 6%
   );
+  filter: drop-shadow(0 3px 4px rgba(68,37,24,.22));
 }
 .wax-seal::after {
   content: "";
   position: absolute;
-  inset: 13px;
-  border: 2px solid rgba(106,58,21,.42);
+  inset: 12px;
+  border: 2px solid rgba(92,42,14,.48);
   border-radius: 50%;
-  box-shadow: inset 0 1px 3px rgba(255,255,255,.36);
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255,255,255,.12), transparent 28%),
+    radial-gradient(circle at 58% 65%, rgba(75,31,9,.15), transparent 45%);
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,.32),
+    inset 0 -3px 5px rgba(75,31,9,.28),
+    0 1px 1px rgba(255,242,178,.22);
 }
 .seal-initials {
   position: relative;
   z-index: 1;
   font-family: "Great Vibes", cursive;
-  font-size: 32px;
+  font-size: 34px;
   line-height: 1;
-  color: #71441e;
+  color: #6a3a17;
   text-shadow:
-    0 1px 0 rgba(255,236,164,.75),
-    0 -1px 0 rgba(75,35,10,.26);
+    0 1px 0 rgba(255,239,170,.52),
+    0 -1px 0 rgba(70,27,8,.38),
+    1px 2px 2px rgba(72,31,9,.22);
   transform: rotate(7deg);
   white-space: nowrap;
+  filter: drop-shadow(0 1px 0 rgba(255,237,164,.32));
 }
 .start-card strong {
   display: block;

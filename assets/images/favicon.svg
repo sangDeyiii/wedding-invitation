@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bg" cx="34%" cy="24%" r="72%">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="0.56" stop-color="#fff5f6"/>
+      <stop offset="1" stop-color="#e78fa3"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="12" y1="8" x2="54" y2="58">
+      <stop offset="0" stop-color="#f3c7d0"/>
+      <stop offset="1" stop-color="#c75f77"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="url(#ring)" stroke-width="3"/>
+  <path d="M32 48c-9-6-16-12-16-20 0-5 4-9 9-9 3 0 5 1 7 4 2-3 4-4 7-4 5 0 9 4 9 9 0 8-7 14-16 20Z" fill="#c75f77" opacity=".16"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#9b6d5f">TP</text>
+</svg>
