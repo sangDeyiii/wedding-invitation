@@ -215,38 +215,43 @@ button, input, select, textarea { font: inherit; }
 
 .start-overlay {
   position: fixed;
-  inset: 0;
-  z-index: 60;
+  top: max(16px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
   display: none;
-  place-items: center;
-  padding: 24px;
-  background: rgba(255, 253, 248, .78);
-  backdrop-filter: blur(12px);
+  width: min(100% - 32px, 320px);
+  pointer-events: none;
 }
-.start-overlay.show { display: grid; }
+.start-overlay.show { display: block; }
 .start-card {
-  width: min(100%, 310px);
+  width: 100%;
   border: 0;
-  border-radius: 26px;
-  padding: 24px 22px;
+  border-radius: 999px;
+  padding: 10px 14px;
   color: white;
   background: var(--pink-dark);
   box-shadow: var(--shadow);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: auto;
 }
 .start-card span {
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 14px;
+  width: 34px;
+  height: 34px;
+  margin: 0;
   border-radius: 50%;
   background: rgba(255,255,255,.2);
-  font-size: 28px;
+  font-size: 18px;
 }
 .start-card strong {
   display: block;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.35;
 }
 

@@ -69,13 +69,17 @@ function hideStartOverlay() {
   startOverlay?.setAttribute('aria-hidden', 'true');
 }
 
-function startSlowAutoScroll(speed = 46) {
+function startSlowAutoScroll(speed = 58) {
   let lastTime;
   let currentY = window.scrollY || document.documentElement.scrollTop || 0;
   let isCancelled = false;
+  const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+
+  document.documentElement.style.scrollBehavior = 'auto';
 
   const cancelAutoScroll = () => {
     isCancelled = true;
+    document.documentElement.style.scrollBehavior = originalScrollBehavior;
   };
 
   window.addEventListener('wheel', cancelAutoScroll, { passive: true, once: true });
@@ -96,9 +100,13 @@ function startSlowAutoScroll(speed = 46) {
     const nextY = Math.min(currentY + speed * elapsedSeconds, maxScroll);
     currentY = nextY;
 
-    window.scrollTo(0, nextY);
+    window.scrollTo({ top: nextY, left: 0, behavior: 'auto' });
 
-    if (nextY < maxScroll) window.requestAnimationFrame(step);
+    if (nextY < maxScroll) {
+      window.requestAnimationFrame(step);
+    } else {
+      document.documentElement.style.scrollBehavior = originalScrollBehavior;
+    }
   }
 
   window.requestAnimationFrame(step);
@@ -124,7 +132,10 @@ musicToggle.addEventListener('click', async () => {
 
 startExperience?.addEventListener('click', async () => {
   const played = await tryPlayMusic();
-  if (played) hideStartOverlay();
+  if (played) {
+    hideStartOverlay();
+    if (window.scrollY < 10) startSlowAutoScroll();
+  }
 });
 
 async function initMusic() {
