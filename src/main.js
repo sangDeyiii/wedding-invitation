@@ -32,6 +32,9 @@ const startOverlay = document.getElementById('startOverlay');
 const startExperience = document.getElementById('startExperience');
 let musicPlaying = false;
 
+music.pause();
+music.currentTime = 0;
+
 function syncMusicButton() {
   musicToggle.textContent = musicPlaying ? '\u266b' : '\u266a';
   musicToggle.setAttribute(
@@ -71,13 +74,13 @@ function hideStartOverlay() {
 
   window.setTimeout(() => {
     startOverlay?.classList.add('opening');
-  }, 720);
+  }, 980);
 
   window.setTimeout(() => {
     document.body.style.overflow = '';
     startOverlay?.classList.remove('show', 'is-opening', 'opening');
     startOverlay?.setAttribute('aria-hidden', 'true');
-  }, 1280);
+  }, 1580);
 }
 
 function startSlowAutoScroll(speed = 58) {
@@ -149,7 +152,7 @@ startExperience?.addEventListener('click', async () => {
 
   window.setTimeout(() => {
     if (window.scrollY < 10) startSlowAutoScroll();
-  }, 1380);
+  }, 1680);
 });
 
 async function initMusic() {

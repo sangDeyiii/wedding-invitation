@@ -225,7 +225,7 @@ button, input, select, textarea { font: inherit; }
     radial-gradient(circle at 18% 12%, rgba(231,143,163,.26), transparent 28%),
     radial-gradient(circle at 84% 78%, rgba(177,201,165,.2), transparent 32%),
     linear-gradient(135deg, #fffdf8, #fff5f6 48%, #f7f3ed);
-  transition: opacity .55s ease, visibility .55s ease;
+  transition: opacity .7s ease, visibility .7s ease;
 }
 .start-overlay::before {
   content: "";
@@ -259,7 +259,7 @@ button, input, select, textarea { font: inherit; }
   box-shadow:
     0 28px 70px rgba(124, 85, 76, .24),
     inset 0 1px 0 rgba(255,255,255,.24);
-  transition: transform .82s cubic-bezier(.2,.72,.18,1), opacity .7s ease;
+  transition: transform 1.05s cubic-bezier(.16, .84, .28, 1), opacity .88s ease, filter .88s ease;
 }
 .envelope-panel::before {
   content: "";
@@ -270,7 +270,7 @@ button, input, select, textarea { font: inherit; }
     repeating-linear-gradient(22deg, rgba(231,143,163,.1) 0 1px, transparent 1px 5px),
     repeating-linear-gradient(112deg, rgba(155,109,95,.12) 0 1px, transparent 1px 6px);
   opacity: .7;
-  transition: transform .82s cubic-bezier(.2,.72,.18,1), opacity .64s ease;
+  transition: transform 1.05s cubic-bezier(.16, .84, .28, 1), opacity .88s ease;
 }
 .envelope-panel::after {
   content: "";
@@ -296,14 +296,14 @@ button, input, select, textarea { font: inherit; }
     0 18px 36px rgba(124,85,76,.18),
     inset 0 0 0 1px rgba(199,95,119,.14);
   opacity: 0;
-  transform: translate(-50%, 48px) scale(.92);
-  transition: transform .84s cubic-bezier(.2,.72,.18,1), opacity .5s ease;
+  transform: translate(-50%, 36px) scale(.96);
+  transition: transform 1.08s cubic-bezier(.16, .84, .28, 1), opacity .72s ease;
 }
 .envelope-flap {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  transition: transform .84s cubic-bezier(.2,.72,.18,1), opacity .55s ease, filter .55s ease;
+  transition: transform 1.08s cubic-bezier(.16, .84, .28, 1), opacity .82s ease, filter .82s ease;
 }
 .envelope-flap-top {
   clip-path: polygon(0 0, 100% 0, 50% 52%);
@@ -345,7 +345,7 @@ button, input, select, textarea { font: inherit; }
   justify-content: center;
   gap: 8px;
   transform: translate(-50%, -50%);
-  transition: transform .62s cubic-bezier(.2,.72,.18,1), opacity .48s ease, filter .48s ease;
+  transition: transform .82s cubic-bezier(.16, .84, .28, 1), opacity .7s ease, filter .7s ease;
 }
 .wax-seal {
   position: relative;
@@ -448,35 +448,36 @@ button, input, select, textarea { font: inherit; }
   transform: translateY(-2px) rotate(-4deg);
 }
 .start-overlay.is-opening .envelope-panel {
-  transform: translateY(22px) scale(.96);
+  filter: saturate(.98);
+  transform: translateY(12px) scale(.985);
 }
 .start-overlay.is-opening .envelope-panel::before {
-  opacity: .38;
+  opacity: .48;
 }
 .start-overlay.is-opening .envelope-panel .start-card::before {
   opacity: 1;
-  transform: translate(-50%, -118px) scale(1);
+  transform: translate(-50%, -104px) scale(1);
 }
 .start-overlay.is-opening .envelope-flap-top {
-  transform: rotateX(68deg) translateY(-8px);
+  transform: rotateX(54deg) translateY(-5px);
   filter: brightness(1.03);
 }
 .start-overlay.is-opening .envelope-flap-left {
-  transform: translateX(-18px) rotateY(-14deg);
-  opacity: .82;
+  transform: translateX(-10px) rotateY(-8deg);
+  opacity: .88;
 }
 .start-overlay.is-opening .envelope-flap-right {
-  transform: translateX(18px) rotateY(14deg);
-  opacity: .82;
+  transform: translateX(10px) rotateY(8deg);
+  opacity: .88;
 }
 .start-overlay.is-opening .envelope-flap-bottom {
-  transform: translateY(20px);
-  opacity: .86;
+  transform: translateY(12px);
+  opacity: .9;
 }
 .start-overlay.is-opening .start-card {
   opacity: 0;
-  filter: blur(2px);
-  transform: translate(-50%, -50%) scale(.72) rotate(8deg);
+  filter: blur(1px);
+  transform: translate(-50%, -50%) scale(.82) rotate(5deg);
 }
 
 .qr-side { position: fixed; right: calc(50% - 360px); top: 50%; transform: translateY(-50%); width: 130px; padding: 14px; border-radius: 18px; background: white; text-align: center; box-shadow: var(--shadow); }
