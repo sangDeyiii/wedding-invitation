@@ -46,13 +46,19 @@
       <source src="./assets/music/music_for_wedding.mp3" type="audio/mpeg" />
     </audio>
 
-    <div class="start-overlay" id="startOverlay" aria-hidden="true">
-      <button class="start-card" id="startExperience" type="button">
-        <span class="wax-seal" aria-hidden="true">
-          <span class="seal-initials">T P</span>
-        </span>
-        <strong>Mở thiệp</strong>
-      </button>
+    <div class="start-overlay" id="startOverlay" aria-hidden="false">
+      <div class="envelope-panel" aria-hidden="true">
+        <div class="envelope-flap envelope-flap-top"></div>
+        <div class="envelope-flap envelope-flap-left"></div>
+        <div class="envelope-flap envelope-flap-right"></div>
+        <div class="envelope-flap envelope-flap-bottom"></div>
+        <button class="start-card" id="startExperience" type="button" aria-label="Mở thiệp và bật nhạc">
+          <span class="wax-seal" aria-hidden="true">
+            <span class="seal-initials">T P</span>
+          </span>
+          <strong>Mở thiệp</strong>
+        </button>
+      </div>
     </div>
 
     <main class="phone-shell">

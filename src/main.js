@@ -60,13 +60,20 @@ function pauseMusic() {
 }
 
 function showStartOverlay() {
+  document.body.style.overflow = 'hidden';
+  startOverlay?.classList.remove('opening');
   startOverlay?.classList.add('show');
   startOverlay?.setAttribute('aria-hidden', 'false');
 }
 
 function hideStartOverlay() {
-  startOverlay?.classList.remove('show');
-  startOverlay?.setAttribute('aria-hidden', 'true');
+  startOverlay?.classList.add('opening');
+
+  window.setTimeout(() => {
+    document.body.style.overflow = '';
+    startOverlay?.classList.remove('show', 'opening');
+    startOverlay?.setAttribute('aria-hidden', 'true');
+  }, 560);
 }
 
 function startSlowAutoScroll(speed = 58) {
@@ -132,37 +139,19 @@ musicToggle.addEventListener('click', async () => {
 
 startExperience?.addEventListener('click', async () => {
   const played = await tryPlayMusic();
-  if (played) {
-    hideStartOverlay();
+  hideStartOverlay();
+
+  if (!played) syncMusicButton();
+
+  window.setTimeout(() => {
     if (window.scrollY < 10) startSlowAutoScroll();
-  }
+  }, 760);
 });
 
 async function initMusic() {
-  const played = await tryPlayMusic();
-  if (played) {
-    hideStartOverlay();
-    return;
-  }
-
   showStartOverlay();
-
-  const playAfterInteraction = async () => {
-    const started = await tryPlayMusic();
-    if (!started) return;
-
-    hideStartOverlay();
-    window.removeEventListener('pointerdown', playAfterInteraction);
-    window.removeEventListener('keydown', playAfterInteraction);
-    window.removeEventListener('touchstart', playAfterInteraction);
-  };
-
-  window.addEventListener('pointerdown', playAfterInteraction);
-  window.addEventListener('keydown', playAfterInteraction);
-  window.addEventListener('touchstart', playAfterInteraction, { passive: true });
 }
 
-scheduleAutoScroll();
 if (document.readyState === 'complete') {
   initMusic();
 } else {
